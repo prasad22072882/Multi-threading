@@ -23,8 +23,22 @@ public class Demo1 {
 			}
 		});
 
+		System.out.println("t1 is alive: " + t1.isAlive());
+		System.out.println("t2 is alive: " + t2.isAlive());
+		
 		t1.start();
 		Thread.sleep(10);
 		t2.start();
+		Thread.sleep(10);
+
+		System.out.println("t1 is alive: " + t1.isAlive());
+		System.out.println("t2 is alive: " + t2.isAlive());
+
+		t1.join();
+		t2.join();
+		System.out.println("t1 is alive: " + t1.isAlive());
+		System.out.println("t2 is alive: " + t2.isAlive());
+
+		System.out.println("All process is completed."); // executed by main thread.
 	}
 }
